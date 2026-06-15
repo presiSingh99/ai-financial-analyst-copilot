@@ -18,7 +18,6 @@ with a yfinance call:
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from streamlit_autorefresh import st_autorefresh
 
@@ -635,11 +634,8 @@ st.markdown(f"""
 # ── Chart ──
 st.markdown('<div class="section-label">Price Chart · Closing Price + Moving Averages</div>',
             unsafe_allow_html=True)
-fig = build_chart(df, selected_ticker)
-st.markdown('<div class="chart-wrapper">', unsafe_allow_html=True)
-st.plotly_chart(fig, use_container_width=True,
-                config={"displayModeBar": False})
-st.markdown('</div>', unsafe_allow_html=True)
+chart_df = df.set_index("Date")[["Close", "MA7", "MA30"]]
+st.line_chart(chart_df, height=340)
 
 # ── Metrics Table + AI Summary ──
 col_left, col_right = st.columns([1, 1.6], gap="large")
