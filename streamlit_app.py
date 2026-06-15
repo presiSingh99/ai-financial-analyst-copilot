@@ -329,32 +329,6 @@ def build_chart(df: pd.DataFrame, ticker: str) -> go.Figure:
         hoverinfo="skip",
     ))
 
-    fig.update_layout(
-        plot_bgcolor="#111827",
-        paper_bgcolor="#111827",
-        font=dict(family="SF Mono, Fira Code, monospace",
-                  color="#94a3b8", size=11),
-        margin=dict(l=14, r=14, t=14, b=14),
-        legend=dict(
-            orientation="h", x=0, y=1.08,
-            bgcolor="rgba(0,0,0,0)",
-            font=dict(size=11),
-        ),
-        xaxis=dict(
-            gridcolor="#1e2d45", showgrid=True,
-            zeroline=False, tickformat="%b %d",
-        ),
-        yaxis=dict(
-            gridcolor="#1e2d45", showgrid=True,
-            zeroline=False, tickprefix="$",
-        ),
-        hovermode="x unified",
-        hoverlabel=dict(bgcolor="#0d1f35", font_color="#e2e8f0", font_size=12),
-        height=340,
-    )
-    return fig
-
-
 def build_metrics_table(df: pd.DataFrame) -> str:
     latest = df["Close"].iloc[-1]
     high_52 = df["Close"].max()
