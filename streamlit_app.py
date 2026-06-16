@@ -49,34 +49,50 @@ st.markdown("""
 # ─────────────────────────────────────────────
 st.markdown("""
 <style>
-  /* ── Base ── */
-  [data-testid="stAppViewContainer"] {
-      background: #0d0b1a;
-      color: #e2e8f0;
-  }
+[data-testid="stAppViewContainer"] {
+    background: #0d0b1a;
+    color: #e2e8f0;
+}
 
-  /* ── Sidebar ── */
-  [data-testid="stSidebar"] {
-      background: #111827;
-      border-right: 1px solid #1e2d45;
-  }
+[data-testid="stSidebar"],
+[data-testid="stSidebarContent"] {
+    background-color: #111827 !important;
+    border-right: 1px solid #1e2d45;
+}
 
-  [data-testid="stSidebar"] * {
-      color: #cbd5e1 !important;
-  }
-</style>
-""", unsafe_allow_html=True)
+[data-testid="stSidebar"] * {
+    color: #cbd5e1 !important;
+}
 
-  /* ── Header ── */
-  .copilot-header {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      padding: 0 0 6px 0;
-      border-bottom: 1px solid #1e3a5f;
-      margin-bottom: 28px;
-  }
-  @media (max-width: 768px) {
+.copilot-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 0 0 6px 0;
+    border-bottom: 1px solid #1e3a5f;
+    margin-bottom: 28px;
+}
+
+.copilot-title {
+    font-family: monospace;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.copilot-sub {
+    font-size: 0.85rem;
+    color: #475569;
+    font-family: monospace;
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+    }
+
     .copilot-header {
         flex-direction: column;
         align-items: flex-start;
@@ -93,28 +109,8 @@ st.markdown("""
         font-size: 0.75rem !important;
     }
 }
-  .copilot-title {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #38bdf8;
-      letter-spacing: -0.5px;
-  }
-  .copilot-sub {
-      font-size: 0.85rem;
-      color: #475569;
-      font-family: monospace;
-  }
-  .ticker-badge {
-      font-family: monospace;
-      font-size: 0.8rem;
-      background: #0f2944;
-      color: #38bdf8;
-      padding: 3px 10px;
-      border-radius: 4px;
-      border: 1px solid #1e4976;
-      margin-left: auto;
-  }
+</style>
+""", unsafe_allow_html=True)
 
   /* ── KPI cards ── */
   .kpi-grid {
