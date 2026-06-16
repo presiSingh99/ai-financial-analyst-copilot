@@ -264,12 +264,9 @@ st.markdown("""
 # DATA LAYER  ← replace this function with yfinance
 # ─────────────────────────────────────────────
 
-st.markdown(f"##### {selected_ticker} · {period_label}")
-
 FAKE_PRICES = {
     "NVDA": 875.50,   # approximate seed price
 }
-
 
 def get_stock_data(ticker: str, period_days: int) -> pd.DataFrame:
     """
@@ -552,7 +549,7 @@ selected_ticker = st.selectbox(
     "Detailed View",
     tickers
 )
-
+st.markdown(f"##### {selected_ticker} · {period_label}")
 # ── Load & enrich data ──
 with st.spinner("Loading market data…"):
     raw_df = get_stock_data(selected_ticker, period_days)
