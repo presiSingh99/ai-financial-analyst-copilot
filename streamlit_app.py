@@ -242,8 +242,12 @@ st.markdown("""
       margin-bottom: 28px;
   }
 
-  /* hide default streamlit chrome */
-  #MainMenu, footer, header { visibility: hidden; }
+  /* hide default streamlit chrome but keep sidebar toggle */
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { visibility: visible; }
+[data-testid="stHeader"] { background: transparent !important; }
+[data-testid="stDecoration"] { display: none; }
   .block-container { padding-top: 1.5rem; padding-bottom: 2rem; }
 </style>
 """, unsafe_allow_html=True)
