@@ -54,11 +54,18 @@ st.markdown("""
       background: #0d0b1a;
       color: #e2e8f0;
   }
+
+  /* ── Sidebar ── */
   [data-testid="stSidebar"] {
       background: #111827;
       border-right: 1px solid #1e2d45;
   }
-  [data-testid="stSidebar"] * { color: #cbd5e1 !important; }
+
+  [data-testid="stSidebar"] * {
+      color: #cbd5e1 !important;
+  }
+</style>
+""", unsafe_allow_html=True)
 
   /* ── Header ── */
   .copilot-header {
