@@ -32,18 +32,6 @@ st.set_page_config(
 )
 st_autorefresh(interval=60 * 1000, key="stock_refresh")
 
-st.markdown("""
-<style>
-@media (max-width: 768px) {
-    .block-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        padding-top: 1rem !important;
-    }
-}
-</style>
-""", unsafe_allow_html=True)
-
 # ─────────────────────────────────────────────
 # CUSTOM CSS  (fintech dark-mode aesthetic)
 # ─────────────────────────────────────────────
